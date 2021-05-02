@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './Style.css';
 
 class Home extends React.Component {
@@ -20,8 +21,8 @@ class Home extends React.Component {
             },
             {
                 id: 2,
-                login: 'drishaolin',
-                name: 'Drika Mucci'
+                login: 'danielcsrs',
+                name: 'Daniel Castro'
             },
         ];
         this.setState ({ users: users, isLoading: false})
@@ -54,7 +55,7 @@ function RenderLoader () {
 function RenderUserLine ({login, name}) {
 return(
     <li>
-        {name} e {login}
+        <Link to = {`user/${login}`}>{name}</Link>
     </li>
 )
 }
